@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Chooser</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="group">Group</string>
+    <string name="finger">Finger</string>
+    <string name="finger_mode">Finger Mode</string>
+    <string name="groupe_mode">Group Mode</string>
+    <string name="f">F</string>
+    <string name="g">G</string>
+    <string name="fyek">Choose the amount of people to be selected</string>
+    <string name="fdo">Everyone should place a finger on the screen</string>
+    <string name="fse">Keep touching until you see the hilights around the selected finger</string>
+    <string name="gyek">Choose the amount of people per group</string>
+    <string name="gse">Keep touching,same colors are in same groups</string>
+</resources>

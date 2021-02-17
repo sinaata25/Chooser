@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7979AC"
+    tools:context=".MainActivity"
+    tools:ignore="MissingClass">
+
+    <ImageView
+        android:id="@+id/imageView_non_1"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="80dp" />
+
+    <ImageView
+        android:id="@+id/imageView_non_2"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="93dp" />
+
+    <ImageView
+        android:id="@+id/imageView_non_3"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="72dp" />
+
+    <ImageView
+        android:id="@+id/imageView_non_4"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView_non_5"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView_non_6"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="72dp" />
+
+    <ImageView
+        android:id="@+id/imageView_non_7"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="72dp" />
+
+    <ImageView
+        android:id="@+id/imageView_non_8"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <ImageView
+        android:id="@+id/imageView_non_9"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <TextView
+        android:id="@+id/textView_five"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="244dp"
+        android:background="@mipmap/numcircle"
+        android:gravity="center"
+        android:text="@string/five"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_four"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="184dp"
+        android:background="@mipmap/numcircle"
+        android:gravity="center"
+        android:text="@string/four"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView_press_hold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_question"
+        app:srcCompat="@mipmap/presshold" />
+
+    <ImageView
+        android:id="@+id/imageView_question"
+        android:layout_width="85dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/question" />
+
+    <TextView
+        android:id="@+id/textView_finger"
+        android:layout_width="123dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@mipmap/rect"
+        android:contentDescription="notselect"
+        android:gravity="center|left"
+        android:paddingLeft="10dp"
+        android:text="@string/finger"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_smallrect"
+        android:layout_width="62dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:background="@mipmap/smallrect"
+        android:contentDescription="notselect"
+        android:gravity="center|left"
+        android:paddingLeft="15dp"
+        android:text="@string/finger"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView_groupe"
+        android:layout_width="112dp"
+        android:layout_height="50dp"
+        android:background="@mipmap/rect"
+        android:contentDescription="notselect"
+        android:gravity="center"
+        android:text="@string/group"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textView_finger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_one"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="4dp"
+        android:background="@mipmap/numcircle"
+        android:contentDescription="notselect"
+        android:gravity="center"
+        android:text="@string/one"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_one_copy"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="4dp"
+        android:background="@mipmap/numcircle"
+        android:contentDescription="notselect"
+        android:gravity="center"
+        android:text="@string/one"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_two"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="64dp"
+        android:background="@mipmap/numcircle"
+        android:gravity="center"
+        android:text="@string/two"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_tree"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="124dp"
+        android:background="@mipmap/numcircle"
+        android:gravity="center"
+        android:text="@string/three"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView_non_10"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/notselectcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <TextView
+        android:id="@+id/textView_count_secrnd"
+        android:layout_width="154dp"
+        android:layout_height="171dp"
+        android:gravity="center"
+        android:text="@string/five"
+        android:textColor="@color/white"
+        android:textSize="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textView_one_copy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_question"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <ImageView
+        android:id="@+id/imageView_redcircle_1"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+    <ImageView
+        android:id="@+id/imageView_redcircle_2"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+    <ImageView
+        android:id="@+id/imageView_redcircle_3"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+    <ImageView
+        android:id="@+id/imageView_redcircle_4"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+    <ImageView
+        android:id="@+id/imageView_redcircle_5"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_redcircle_6"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_redcircle_7"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_redcircle_8"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_redcircle_9"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_redcircle_10"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/redcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+    <ImageView
+        android:id="@+id/imageView_bluecircle_1"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <ImageView
+        android:id="@+id/imageView_bluecircle_2"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <ImageView
+        android:id="@+id/imageView_bluecircle_3"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <ImageView
+        android:id="@+id/imageView_bluecircle_4"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <ImageView
+        android:id="@+id/imageView_bluecircle_5"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+    <ImageView
+        android:id="@+id/imageView_bluecircle_6"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+    <ImageView
+        android:id="@+id/imageView_bluecircle_7"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+    <ImageView
+        android:id="@+id/imageView_bluecircle_8"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+    <ImageView
+        android:id="@+id/imageView_bluecircle_9"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <ImageView
+        android:id="@+id/imageView_bluecircle_10"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/bluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_1"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_2"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_3"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_4"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_5"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_6"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_7"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_8"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_9"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_darkbluecircle_10"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/darkbluecircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_1"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_2"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_3"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_4"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_5"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_6"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_7"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_8"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_9"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView_yellowcircle_10"
+        android:layout_width="259dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/yellowcircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <ImageView
+        android:id="@+id/imageView_greencircle_1"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+    <ImageView
+        android:id="@+id/imageView_greencircle_2"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+    <ImageView
+        android:id="@+id/imageView_greencircle_3"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_greencircle_4"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_greencircle_5"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_greencircle_6"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_greencircle_7"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_greencircle_8"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_greencircle_9"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+    <ImageView
+        android:id="@+id/imageView_greencircle_10"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/greencircle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
