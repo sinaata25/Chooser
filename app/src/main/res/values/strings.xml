@@ -16,4 +16,13 @@
     <string name="fse">Keep touching until you see the hilights around the selected finger</string>
     <string name="gyek">Choose the amount of people per group</string>
     <string name="gse">Keep touching,same colors are in same groups</string>
+    <string name="luck0">What is bad luck for one man is good luck for another</string>
+    <string name="luck1">To be lucky you need a little wait</string>
+    <string name="luck2">Lucky at chooser,unlucky in love :)</string>
+    <string name="luck3">Change yourself,and your luck will change</string>
+    <string name="luck4">Luck is loaned,not owned</string>
+    <string name="luck5">There is no one luckier than he who thinks himself so</string>
+    <string name="luck6">The luckiest dies in his cradle</string>
+    <string name="luck7">Luck never gives; it only lends</string>
+
 </resources>

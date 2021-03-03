@@ -15,13 +15,19 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hanks.htextview.HTextView;
+import com.hanks.htextview.HTextViewType;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -43,7 +49,8 @@ public class MainActivity extends AppCompatActivity  {
     Object[] finger_randoms_array;
     MotionEvent event;
         int sec=3;
-        int sec_reset_timer=2;
+        int sec_reset_timer=1;
+        HTextView hTextView,reaction;
         ImageView  press_hold,non_select_finger1,non_select_finger2,non_select_finger3,non_select_finger4,non_select_finger5;
         ImageView non_select_finger6,non_select_finger7,non_select_finger8,non_select_finger9,non_select_finger10;
         ImageView bluecircle_1,bluecircle_2,bluecircle_3,bluecircle_4,bluecircle_5,bluecircle_6,bluecircle_7,bluecircle_8,bluecircle_9,bluecircle_10;
@@ -136,6 +143,8 @@ public class MainActivity extends AppCompatActivity  {
         greencircle_8=findViewById(R.id.imageView_greencircle_8);
         greencircle_9=findViewById(R.id.imageView_greencircle_9);
         greencircle_10=findViewById(R.id.imageView_greencircle_10);
+        hTextView = (HTextView) findViewById(R.id.text);
+        reaction=(HTextView)findViewById(R.id.react);
     }
     public void Handle_Views(){
         Handle_copy_btn();
@@ -164,15 +173,44 @@ public class MainActivity extends AppCompatActivity  {
     }
     private void SetGone_non_fingers(){
         non_select_finger1.setVisibility(View.GONE);
+        non_select_finger1.setX(-1000);
+        non_select_finger1.setY(-1000);
+        //
         non_select_finger2.setVisibility(View.GONE);
+        non_select_finger2.setX(-1000);
+        non_select_finger2.setY(-1000);
+        //
         non_select_finger3.setVisibility(View.GONE);
+        non_select_finger3.setX(-1000);
+        non_select_finger3.setY(-1000);
+        //
         non_select_finger4.setVisibility(View.GONE);
+        non_select_finger4.setX(-1000);
+        non_select_finger4.setY(-1000);
+        //
         non_select_finger5.setVisibility(View.GONE);
+        non_select_finger5.setX(-1000);
+        non_select_finger5.setY(-1000);
+        //
         non_select_finger6.setVisibility(View.GONE);
+        non_select_finger6.setX(-1000);
+        non_select_finger6.setY(-1000);
+        //
         non_select_finger7.setVisibility(View.GONE);
+        non_select_finger7.setX(-1000);
+        non_select_finger7.setY(-1000);
+        //
         non_select_finger8.setVisibility(View.GONE);
+        non_select_finger8.setX(-1000);
+        non_select_finger8.setY(-1000);
+        //
         non_select_finger9.setVisibility(View.GONE);
+        non_select_finger9.setX(-1000);
+        non_select_finger9.setY(-1000);
+        //
         non_select_finger10.setVisibility(View.GONE);
+        non_select_finger10.setX(-1000);
+        non_select_finger10.setY(-1000);
     }
     private void SetGone_Selected_Circles(){
         redcircle_1.setVisibility(View.GONE);
@@ -225,6 +263,20 @@ public class MainActivity extends AppCompatActivity  {
         greencircle_8.setVisibility(View.GONE);
         greencircle_9.setVisibility(View.GONE);
         greencircle_10.setVisibility(View.GONE);
+        reaction.setAnimateType(HTextViewType.EVAPORATE);reaction.animateText(" ");
+
+    }
+    private void Cancle_non_finger_alpha_animation(){
+        alpha_animation(non_select_finger1,0);
+        alpha_animation(non_select_finger2,0);
+        alpha_animation(non_select_finger3,0);
+        alpha_animation(non_select_finger4,0);
+        alpha_animation(non_select_finger5,0);
+        alpha_animation(non_select_finger6,0);
+        alpha_animation(non_select_finger7,0);
+        alpha_animation(non_select_finger8,0);
+        alpha_animation(non_select_finger9,0);
+        alpha_animation(non_select_finger10,0);
     }
     private void Handle_group_btn(){
         textView_group.setOnClickListener(new View.OnClickListener() {
@@ -271,6 +323,7 @@ public class MainActivity extends AppCompatActivity  {
         textView_copy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Roatate_Animation(textView_copy);
                     if(textView_finger.getText().toString().equals("Finger")){
                         textView_smallrect.setText(R.string.f);
                         textView_one.setText(R.string.one);
@@ -352,6 +405,7 @@ public class MainActivity extends AppCompatActivity  {
         });
 
     }
+
     private void Selected_Fingers_Circle(MotionEvent event){
 try {
     for(int i=0;i<=finger_randoms_array.length;i++){
@@ -359,6 +413,9 @@ try {
         int yy=(int) finger_randoms_array[i]-1;
         float ix=event.getX(xx);
         float jy=event.getY(yy);
+        if(finger_randoms_array.length==1){
+            Set_React_In_Pos(reaction,ix,jy);
+        }
         switch(xx){
             case 0:SetVisView_In_Pos_Selecteds(redcircle_1,ix,jy); finger_rest_lock=1;break;
             case 1:SetVisView_In_Pos_Selecteds(redcircle_2,ix,jy); finger_rest_lock=1;break;
@@ -385,6 +442,7 @@ try {
 
     }
     private void Selected_Groups_Circle(MotionEvent event){
+
         int min=0;
         int max=Integer.valueOf(final_number);
         try {
@@ -482,6 +540,33 @@ try {
             Log.i("TAG", "Eror: "+e.getMessage());
         }
     }
+    private void alpha_animation(final View view, int lock){
+        AlphaAnimation alphaAnimation=new AlphaAnimation(1f,0f);
+        alphaAnimation.setDuration(700);
+        alphaAnimation.setFillAfter(false);
+        alphaAnimation.setRepeatCount(Animation.INFINITE);
+        alphaAnimation.setRepeatMode(Animation.REVERSE);
+        view.startAnimation(alphaAnimation);
+        if(lock==0){
+            alphaAnimation.cancel();
+        }
+    }
+    private void Scale_Animation(View view){
+        ScaleAnimation scaleAnimation=new ScaleAnimation(1f,1.5f,1f,1.5f,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+scaleAnimation.setFillAfter(true);
+scaleAnimation.setDuration(500);
+scaleAnimation.setRepeatCount(Animation.INFINITE);
+scaleAnimation.setRepeatMode(Animation.REVERSE);
+scaleAnimation.setInterpolator(new DecelerateInterpolator());
+view.startAnimation(scaleAnimation);
+    }
+    private void Roatate_Animation(View view){
+        RotateAnimation rotateAnimation=new RotateAnimation(0f,360f,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+        rotateAnimation.setDuration(200);
+        rotateAnimation.setFillAfter(false);
+        rotateAnimation.setRepeatCount(0);
+        view.startAnimation(rotateAnimation);
+    }
     //////////////////////////////////////back funcs
     private void vibrate(int vibarate){
         Vibrator v = (Vibrator) getSystemService(getApplicationContext().VIBRATOR_SERVICE);
@@ -492,6 +577,7 @@ try {
         }
     }
     private void My_timer(){
+        hTextView.setAnimateType(HTextViewType.FALL);
         timer=new Timer();
         if(sec==3){
             timer.schedule(new TimerTask() {
@@ -500,16 +586,20 @@ try {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            count_sec.setVisibility(View.VISIBLE);
-                            count_sec.setText(String.valueOf(sec));
+                         //   count_sec.setVisibility(View.VISIBLE);
+                            hTextView.setVisibility(View.VISIBLE);
+                            hTextView.animateText(String.valueOf(sec));
+                         //   count_sec.setText(String.valueOf(sec));
                             sec--;
                             if(sec==-1){
                                 timer.cancel();
                                 timer.purge();
-                                count_sec.setVisibility(View.GONE);
+                           //     count_sec.setVisibility(View.GONE);
+                                hTextView.setVisibility(View.GONE);
                                 vibrate(500);
                                 Random_Selection();
                                 SetGone_non_fingers();
+                                Cancle_non_finger_alpha_animation();
                                 sec=3;
                             }
                         }
@@ -518,7 +608,7 @@ try {
             },0,1000);}
     }
     private void Reset_Timer(){
-        if(sec_reset_timer==2){
+        if(sec_reset_timer==1){
             reset_timer=new Timer();
             reset_timer.schedule(new TimerTask() {
                 @Override
@@ -531,7 +621,7 @@ try {
                                 SetGone_Selected_Circles();
                                 reset_timer.cancel();
                                 reset_timer.purge();
-                                sec_reset_timer=2;
+                                sec_reset_timer=1;
                             }
                         }
                     });
@@ -568,18 +658,29 @@ try {
     }
     private void SetVisView_In_Pos(View view,float x,float y){
         view.setX(x-dpToPx(48));
-        view.setY(y-dpToPx(48));
+        view.setY(y-dpToPx(48+24));
         view.setVisibility(View.VISIBLE);
     }
     private void SetVisView_In_Pos_Selecteds(View view,float x,float y){
         view.setX(x-dpToPx(84));
-        view.setY(y-dpToPx(63));
+        view.setY(y-dpToPx(63+32));
         view.setVisibility(View.VISIBLE);
+    }
+    private void Set_React_In_Pos(View view,float x,float y){
+        String[] string_reacts= new String[8];
+        string_reacts[0]="Heey,lucky!";string_reacts[1]="lucky luke!";
+        string_reacts[2]="Lucky,but unlucky in love";string_reacts[3]="God of luck";
+        string_reacts[4]="Luck is loaned,not owned";string_reacts[5]="Hey guys look that lucky";
+        string_reacts[6]="The luckiest dies in his cradle";string_reacts[7]="Luck never gives,it only lends";
+        view.setX(x-dpToPx(130));
+        view.setY(y-dpToPx(150));
+        view.setVisibility(View.VISIBLE);
+        Random random=new Random();
+        reaction.setAnimateType(HTextViewType.EVAPORATE);reaction.animateText(string_reacts[random.nextInt(8)]);
     }
     public static int pxToDp(int px) {
         return (int) (px / Resources.getSystem().getDisplayMetrics().density);
     }
-
     public static int dpToPx(int dp) {
         return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
     }
@@ -588,16 +689,16 @@ try {
         float y=event.getY(pointerid);
         Log.i("TAG", "Case_Action_Pointer_Down: "+pointerid);
         switch (pointerid){
-            case 0: SetVisView_In_Pos(non_select_finger1,x,y);vibrate(50);break;
-            case 1: SetVisView_In_Pos(non_select_finger2,x,y);vibrate(50);break;
-            case 2: SetVisView_In_Pos(non_select_finger3,x,y);vibrate(50);break;
-            case 3: SetVisView_In_Pos(non_select_finger4,x,y);vibrate(50);break;
-            case 4: SetVisView_In_Pos(non_select_finger5,x,y);vibrate(50);break;
-            case 5: SetVisView_In_Pos(non_select_finger6,x,y);vibrate(50);break;
-            case 6: SetVisView_In_Pos(non_select_finger7,x,y);vibrate(50);break;
-            case 7: SetVisView_In_Pos(non_select_finger8,x,y);vibrate(50);break;
-            case 8: SetVisView_In_Pos(non_select_finger9,x,y);vibrate(50);break;
-            case 9: SetVisView_In_Pos(non_select_finger10,x,y);vibrate(50);break;
+            case 0: SetVisView_In_Pos(non_select_finger1,x,y);alpha_animation(non_select_finger1,1);vibrate(50);break;
+            case 1: SetVisView_In_Pos(non_select_finger2,x,y);alpha_animation(non_select_finger2,1);vibrate(50);break;
+            case 2: SetVisView_In_Pos(non_select_finger3,x,y);alpha_animation(non_select_finger3,1);vibrate(50);break;
+            case 3: SetVisView_In_Pos(non_select_finger4,x,y);alpha_animation(non_select_finger4,1);vibrate(50);break;
+            case 4: SetVisView_In_Pos(non_select_finger5,x,y);alpha_animation(non_select_finger5,1);vibrate(50);break;
+            case 5: SetVisView_In_Pos(non_select_finger6,x,y);alpha_animation(non_select_finger6,1);vibrate(50);break;
+            case 6: SetVisView_In_Pos(non_select_finger7,x,y);alpha_animation(non_select_finger7,1);vibrate(50);break;
+            case 7: SetVisView_In_Pos(non_select_finger8,x,y);alpha_animation(non_select_finger8,1);vibrate(50);break;
+            case 8: SetVisView_In_Pos(non_select_finger9,x,y);alpha_animation(non_select_finger9,1);vibrate(50);break;
+            case 9: SetVisView_In_Pos(non_select_finger10,x,y);alpha_animation(non_select_finger10,1);vibrate(50);break;
         }
 
     }
@@ -624,16 +725,16 @@ try {
     }
     private void Case_Action_Pointer_Up(MotionEvent event,int pointerid){
         switch (pointerid){
-            case 0:non_select_finger1.setVisibility(View.GONE); break;
-            case 1:non_select_finger2.setVisibility(View.GONE); break;
-            case 2:non_select_finger3.setVisibility(View.GONE);  break;
-            case 3:non_select_finger4.setVisibility(View.GONE);  break;
-            case 4:non_select_finger5.setVisibility(View.GONE);  break;
-            case 5:non_select_finger6.setVisibility(View.GONE);  break;
-            case 6:non_select_finger7.setVisibility(View.GONE);  break;
-            case 7:non_select_finger8.setVisibility(View.GONE);  break;
-            case 8:non_select_finger9.setVisibility(View.GONE);  break;
-            case 9:non_select_finger10.setVisibility(View.GONE);  break;
+            case 0:non_select_finger1.setVisibility(View.GONE);alpha_animation(non_select_finger1,0); break;
+            case 1:non_select_finger2.setVisibility(View.GONE);alpha_animation(non_select_finger2,0); break;
+            case 2:non_select_finger3.setVisibility(View.GONE);alpha_animation(non_select_finger3,0);  break;
+            case 3:non_select_finger4.setVisibility(View.GONE);alpha_animation(non_select_finger4,0);  break;
+            case 4:non_select_finger5.setVisibility(View.GONE); alpha_animation(non_select_finger5,0); break;
+            case 5:non_select_finger6.setVisibility(View.GONE);alpha_animation(non_select_finger6,0);  break;
+            case 6:non_select_finger7.setVisibility(View.GONE);alpha_animation(non_select_finger7,0);  break;
+            case 7:non_select_finger8.setVisibility(View.GONE);alpha_animation(non_select_finger8,0);  break;
+            case 8:non_select_finger9.setVisibility(View.GONE);alpha_animation(non_select_finger9,0);  break;
+            case 9:non_select_finger10.setVisibility(View.GONE); alpha_animation(non_select_finger10,0); break;
         }
     }
     private void Case_Action_Down(MotionEvent event){
@@ -659,6 +760,7 @@ try {
         float x=event.getX();
         float y=event.getY();
         SetVisView_In_Pos(non_select_finger1,x,y);
+        alpha_animation(non_select_finger1,1);
         vibrate(59);
         My_timer();
 
@@ -666,7 +768,8 @@ try {
     private void Case_Action_up(MotionEvent event,int pointerid){
        // non_select_finger1.setVisibility(View.GONE);
         Case_Action_Pointer_Up(event,pointerid);
-        count_sec.setVisibility(View.GONE);
+        //count_sec.setVisibility(View.GONE);
+        hTextView.setVisibility(View.GONE);
         press_hold.setVisibility(View.VISIBLE);
         textView_smallrect.setVisibility(View.GONE);
         textView_finger.setVisibility(View.VISIBLE);

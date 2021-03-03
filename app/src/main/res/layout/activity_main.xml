@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:htext="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -297,6 +298,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_question"
         app:layout_constraintVertical_bias="0.363" />
+
+
+    <com.hanks.htextview.HTextView
+        android:id="@+id/text"
+        android:layout_width="154dp"
+        android:layout_height="171dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_one_copy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_question"
+        app:layout_constraintVertical_bias="0.375"
+        htext:animateType="fall" />
+
+    <com.hanks.htextview.HTextView
+        android:id="@+id/react"
+        android:layout_width="263dp"
+        android:layout_height="64dp"
+        android:gravity="center|top"
+        android:textStyle="bold|italic"
+        android:textColor="#FFC107"
+        android:text="luck is mio"
+        android:textSize="20dp"
+        android:visibility="gone"
+        htext:animateType="evaporate"
+        tools:ignore="MissingConstraints" />
+
 
     <ImageView
         android:id="@+id/imageView_redcircle_1"
