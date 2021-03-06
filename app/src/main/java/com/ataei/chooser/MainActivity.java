@@ -6,13 +6,16 @@ import androidx.fragment.app.FragmentManager;
 
 import android.animation.LayoutTransition;
 import android.content.res.Resources;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.util.Xml;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -27,6 +30,8 @@ import android.widget.Toast;
 import com.hanks.htextview.HTextView;
 import com.hanks.htextview.HTextViewType;
 
+import org.xmlpull.v1.XmlPullParser;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -37,6 +42,8 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
+
+
 
 public class MainActivity extends AppCompatActivity  {
         TextView textView_one,textView_two,textView_tree,textView_four,textView_five,textView_finger,textView_group;
@@ -61,6 +68,7 @@ public class MainActivity extends AppCompatActivity  {
         int num_finger=1,pointer_count;
         String final_Mode;
         String final_number;
+    AnimationDrawable anim;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -147,6 +155,7 @@ public class MainActivity extends AppCompatActivity  {
         reaction=(HTextView)findViewById(R.id.react);
     }
     public void Handle_Views(){
+        background_animation();
         Handle_copy_btn();
         Handle_finger_btn();
         Handle_group_btn();
@@ -405,7 +414,12 @@ public class MainActivity extends AppCompatActivity  {
         });
 
     }
-
+    private void background_animation(){
+        anim = (AnimationDrawable) constraintLayout.getBackground();
+        anim.setEnterFadeDuration(4000);
+        anim.setExitFadeDuration(2000);
+        Scale_Animation(press_hold,1);
+    }
     private void Selected_Fingers_Circle(MotionEvent event){
 try {
     for(int i=0;i<=finger_randoms_array.length;i++){
@@ -551,14 +565,18 @@ try {
             alphaAnimation.cancel();
         }
     }
-    private void Scale_Animation(View view){
-        ScaleAnimation scaleAnimation=new ScaleAnimation(1f,1.5f,1f,1.5f,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
-scaleAnimation.setFillAfter(true);
-scaleAnimation.setDuration(500);
+    private void Scale_Animation(View view,int lock){
+        ScaleAnimation scaleAnimation=new ScaleAnimation(1f,0.75f,1f,0.75f,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+scaleAnimation.setFillAfter(false);
+scaleAnimation.setDuration(3000);
 scaleAnimation.setRepeatCount(Animation.INFINITE);
 scaleAnimation.setRepeatMode(Animation.REVERSE);
 scaleAnimation.setInterpolator(new DecelerateInterpolator());
 view.startAnimation(scaleAnimation);
+if(lock==0){
+    scaleAnimation.cancel();
+
+}
     }
     private void Roatate_Animation(View view){
         RotateAnimation rotateAnimation=new RotateAnimation(0f,360f,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
@@ -668,12 +686,29 @@ view.startAnimation(scaleAnimation);
     }
     private void Set_React_In_Pos(View view,float x,float y){
         String[] string_reacts= new String[8];
-        string_reacts[0]="Heey,lucky!";string_reacts[1]="lucky luke!";
-        string_reacts[2]="Lucky,but unlucky in love";string_reacts[3]="God of luck";
-        string_reacts[4]="Luck is loaned,not owned";string_reacts[5]="Hey guys look that lucky";
-        string_reacts[6]="The luckiest dies in his cradle";string_reacts[7]="Luck never gives,it only lends";
-        view.setX(x-dpToPx(130));
-        view.setY(y-dpToPx(150));
+        string_reacts[0]="Heyyy,lucky!";string_reacts[1]="lucky luke!";
+        string_reacts[2]="just unlucky in love";string_reacts[3]="God of luck";
+        string_reacts[4]="lucky luke!";string_reacts[5]="look that lucky guy!";
+        string_reacts[6]="Heyyy,lucky!";string_reacts[7]="look that lucky guy!";
+/*        Log.i("TAG", "Set_React_In_Pos x: "+x);
+        Log.i("TAG", "Set_React_In_Pos y: "+y);*/
+if(x<183){
+    view.setX(x+dpToPx(30));
+    view.setY(y-dpToPx(40));
+}
+else if(x>475){
+    view.setX(x-dpToPx(280));
+    view.setY(y-dpToPx(40));
+}
+else if(y<300){
+    view.setX(x-dpToPx(130));
+    view.setY(y+dpToPx(30));
+}
+else {
+    view.setX(x-dpToPx(130));
+    view.setY(y-dpToPx(150));
+}
+
         view.setVisibility(View.VISIBLE);
         Random random=new Random();
         reaction.setAnimateType(HTextViewType.EVAPORATE);reaction.animateText(string_reacts[random.nextInt(8)]);
@@ -753,7 +788,7 @@ view.startAnimation(scaleAnimation);
             textView_smallrect.setText(R.string.g);
         }
 
-
+        Scale_Animation(press_hold,0);
         press_hold.setVisibility(View.GONE);
         textView_smallrect.setVisibility(View.VISIBLE);
         textView_finger.setVisibility(View.GONE);
@@ -771,6 +806,7 @@ view.startAnimation(scaleAnimation);
         //count_sec.setVisibility(View.GONE);
         hTextView.setVisibility(View.GONE);
         press_hold.setVisibility(View.VISIBLE);
+        Scale_Animation(press_hold,1);
         textView_smallrect.setVisibility(View.GONE);
         textView_finger.setVisibility(View.VISIBLE);
         timer.cancel();
@@ -804,8 +840,17 @@ view.startAnimation(scaleAnimation);
            return true;
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (anim != null && !anim.isRunning())
+            anim.start();
+    }
 
-
-
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (anim != null && anim.isRunning())
+            anim.stop();
+    }
 }
