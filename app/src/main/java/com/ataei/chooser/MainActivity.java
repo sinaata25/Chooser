@@ -225,56 +225,107 @@ public class MainActivity extends AppCompatActivity  {
         non_select_finger10.setY(-1000);
     }
     private void SetGone_Selected_Circles(){
+        alpha_animation(redcircle_1,0);
         redcircle_1.setVisibility(View.GONE);
+        alpha_animation(redcircle_2,0);
         redcircle_2.setVisibility(View.GONE);
+        alpha_animation(redcircle_3,0);
         redcircle_3.setVisibility(View.GONE);
+        alpha_animation(redcircle_4,0);
         redcircle_4.setVisibility(View.GONE);
+        alpha_animation(redcircle_5,0);
         redcircle_5.setVisibility(View.GONE);
+        alpha_animation(redcircle_6,0);
         redcircle_6.setVisibility(View.GONE);
+        alpha_animation(redcircle_7,0);
         redcircle_7.setVisibility(View.GONE);
+        alpha_animation(redcircle_8,0);
         redcircle_8.setVisibility(View.GONE);
+        alpha_animation(redcircle_9,0);
         redcircle_9.setVisibility(View.GONE);
+        alpha_animation(redcircle_10,0);
         redcircle_10.setVisibility(View.GONE);
+        alpha_animation(bluecircle_1,0);
         bluecircle_1.setVisibility(View.GONE);
+        alpha_animation(bluecircle_2,0);
         bluecircle_2.setVisibility(View.GONE);
+        alpha_animation(bluecircle_3,0);
         bluecircle_3.setVisibility(View.GONE);
+        alpha_animation(bluecircle_4,0);
         bluecircle_4.setVisibility(View.GONE);
+        alpha_animation(bluecircle_5,0);
         bluecircle_5.setVisibility(View.GONE);
+        alpha_animation(bluecircle_6,0);
         bluecircle_6.setVisibility(View.GONE);
+        alpha_animation(bluecircle_7,0);
         bluecircle_7.setVisibility(View.GONE);
+        alpha_animation(bluecircle_8,0);
         bluecircle_8.setVisibility(View.GONE);
+        alpha_animation(bluecircle_9,0);
         bluecircle_9.setVisibility(View.GONE);
+        alpha_animation(bluecircle_10,0);
         bluecircle_10.setVisibility(View.GONE);
+        alpha_animation(darkblue_1,0);
         darkblue_1.setVisibility(View.GONE);
+        alpha_animation(darkblue_2,0);
         darkblue_2.setVisibility(View.GONE);
+        alpha_animation(darkblue_3,0);
         darkblue_3.setVisibility(View.GONE);
+        alpha_animation(darkblue_4,0);
         darkblue_4.setVisibility(View.GONE);
+        alpha_animation(darkblue_5,0);
         darkblue_5.setVisibility(View.GONE);
+        alpha_animation(darkblue_6,0);
         darkblue_6.setVisibility(View.GONE);
+        alpha_animation(darkblue_7,0);
         darkblue_7.setVisibility(View.GONE);
+        alpha_animation(darkblue_8,0);
         darkblue_8.setVisibility(View.GONE);
+        alpha_animation(darkblue_9,0);
         darkblue_9.setVisibility(View.GONE);
+        alpha_animation(darkblue_10,0);
         darkblue_10.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_1,0);
         yellowcircle_1.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_2,0);
         yellowcircle_2.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_3,0);
         yellowcircle_3.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_4,0);
         yellowcircle_4.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_5,0);
         yellowcircle_5.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_6,0);
         yellowcircle_6.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_7,0);
         yellowcircle_7.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_8,0);
         yellowcircle_8.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_9,0);
         yellowcircle_9.setVisibility(View.GONE);
+        alpha_animation(yellowcircle_10,0);
         yellowcircle_10.setVisibility(View.GONE);
+        alpha_animation(greencircle_1,0);
         greencircle_1.setVisibility(View.GONE);
+        alpha_animation(greencircle_2,0);
         greencircle_2.setVisibility(View.GONE);
+        alpha_animation(greencircle_3,0);
         greencircle_3.setVisibility(View.GONE);
+        alpha_animation(greencircle_4,0);
         greencircle_4.setVisibility(View.GONE);
+        alpha_animation(greencircle_5,0);
         greencircle_5.setVisibility(View.GONE);
+        alpha_animation(greencircle_6,0);
         greencircle_6.setVisibility(View.GONE);
+        alpha_animation(greencircle_7,0);
         greencircle_7.setVisibility(View.GONE);
+        alpha_animation(greencircle_8,0);
         greencircle_8.setVisibility(View.GONE);
+        alpha_animation(greencircle_9,0);
         greencircle_9.setVisibility(View.GONE);
+        alpha_animation(greencircle_10,0);
         greencircle_10.setVisibility(View.GONE);
+
         reaction.setAnimateType(HTextViewType.EVAPORATE);reaction.animateText(" ");
 
     }
@@ -563,6 +614,11 @@ try {
         alphaAnimation.setFillAfter(false);
         alphaAnimation.setRepeatCount(Animation.INFINITE);
         alphaAnimation.setRepeatMode(Animation.REVERSE);
+        if(lock==2){
+            alphaAnimation.setRepeatMode(2);
+            alphaAnimation.setRepeatCount(5);
+        }
+
         view.startAnimation(alphaAnimation);
         if(lock==0){
             alphaAnimation.cancel();
@@ -686,6 +742,7 @@ if(lock==0){
         view.setX(x-dpToPx(84));
         view.setY(y-dpToPx(63+32));
         view.setVisibility(View.VISIBLE);
+        alpha_animation(view,2);
     }
     private void Set_React_In_Pos(View view,float x,float y){
         String[] string_reacts= new String[8];
