@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 
 import android.animation.LayoutTransition;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
@@ -16,8 +17,10 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.util.Xml;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
@@ -416,7 +419,7 @@ public class MainActivity extends AppCompatActivity  {
     }
     private void background_animation(){
         anim = (AnimationDrawable) constraintLayout.getBackground();
-        anim.setEnterFadeDuration(4000);
+        anim.setEnterFadeDuration(3000);
         anim.setExitFadeDuration(2000);
         Scale_Animation(press_hold,1);
     }
@@ -690,14 +693,21 @@ if(lock==0){
         string_reacts[2]="just unlucky in love";string_reacts[3]="God of luck";
         string_reacts[4]="lucky luke!";string_reacts[5]="look that lucky guy!";
         string_reacts[6]="Heyyy,lucky!";string_reacts[7]="look that lucky guy!";
-/*        Log.i("TAG", "Set_React_In_Pos x: "+x);
-        Log.i("TAG", "Set_React_In_Pos y: "+y);*/
+
+        WindowManager wm = (WindowManager) getApplicationContext().getSystemService(getApplicationContext().WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((Display) display).getMetrics(metrics);
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+
+
 if(x<183){
     view.setX(x+dpToPx(30));
     view.setY(y-dpToPx(40));
 }
-else if(x>475){
-    view.setX(x-dpToPx(280));
+else if(x>width-245){
+    view.setX(x-dpToPx(290));
     view.setY(y-dpToPx(40));
 }
 else if(y<300){

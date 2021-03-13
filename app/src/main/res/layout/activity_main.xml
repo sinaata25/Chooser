@@ -616,8 +616,8 @@
 
     <ImageView
         android:id="@+id/imageView_yellowcircle_1"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
@@ -625,8 +625,8 @@
         tools:layout_editor_absoluteY="468dp" />
     <ImageView
         android:id="@+id/imageView_yellowcircle_2"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
@@ -634,8 +634,8 @@
         tools:layout_editor_absoluteY="468dp" />
     <ImageView
         android:id="@+id/imageView_yellowcircle_3"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
@@ -643,8 +643,8 @@
         tools:layout_editor_absoluteY="468dp" />
     <ImageView
         android:id="@+id/imageView_yellowcircle_4"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
@@ -652,8 +652,8 @@
         tools:layout_editor_absoluteY="468dp" />
     <ImageView
         android:id="@+id/imageView_yellowcircle_5"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
@@ -661,8 +661,8 @@
         tools:layout_editor_absoluteY="468dp" />
     <ImageView
         android:id="@+id/imageView_yellowcircle_6"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
@@ -670,8 +670,8 @@
         tools:layout_editor_absoluteY="468dp" />
     <ImageView
         android:id="@+id/imageView_yellowcircle_7"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
@@ -679,8 +679,8 @@
         tools:layout_editor_absoluteY="468dp" />
     <ImageView
         android:id="@+id/imageView_yellowcircle_8"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
@@ -688,8 +688,8 @@
         tools:layout_editor_absoluteY="468dp" />
     <ImageView
         android:id="@+id/imageView_yellowcircle_9"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
@@ -699,8 +699,8 @@
 
     <ImageView
         android:id="@+id/imageView_yellowcircle_10"
-        android:layout_width="259dp"
-        android:layout_height="180dp"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
         android:visibility="gone"
         app:srcCompat="@mipmap/yellowcircle"
         tools:ignore="MissingConstraints"
