@@ -764,7 +764,7 @@ if(lock==0){
         int height = metrics.heightPixels;
 
 
-if(x<183){
+if(x<230){
     view.setX(x+dpToPx(30));
     view.setY(y-dpToPx(40));
 }
