@@ -3,59 +3,106 @@ package com.ataei.chooser;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.ataei.chooser.adapter.ViewPageradapter;
+import com.ataei.chooser.fragments.F_1;
+import com.ataei.chooser.fragments.F_2;
+import com.ataei.chooser.fragments.F_3;
+import com.ataei.chooser.fragments.G_1;
+import com.ataei.chooser.fragments.G_2;
+import com.ataei.chooser.fragments.G_3;
+import com.google.android.material.tabs.TabLayout;
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
 
 public class Question_Dialog_Fragment extends DialogFragment {
     View view;
-    ImageView next;
+    TextView finger_mode;
     TextView gp_mode;
-    @NonNull
+    ViewPageradapter viewPageradapter;
+
+     ViewPager mPager;
+     ViewPager cpager;
+     WormDotsIndicator wormDotsIndicator;
+
+
+
+    @Nullable
     @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
-        view= LayoutInflater.from(getContext()).inflate(R.layout.question_dialog_fragment,null,false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        view=inflater.inflate(R.layout.question_dialog_fragment,container,false);
         setupviwes();
-        handleclicks();
-        builder.setView(view);
-        return builder.create();
+        Handle_pager(0);
+        Handle_Clicks();
+        return view;
     }
 
     private void setupviwes(){
-        next=view.findViewById(R.id.next_f_1);
-        gp_mode=view.findViewById(R.id.groupemode_f_1);
+        mPager =  view.findViewById(R.id.pager_e);
+        wormDotsIndicator = view.findViewById(R.id.worm_dots_indicator);
+        cpager=view.findViewById(R.id.pager_c);
+       finger_mode=view.findViewById(R.id.finger_mode);
+        gp_mode=view.findViewById(R.id.gp_mode);
     }
+private void Handle_pager(int lock){
 
-    private void handleclicks() {
-        next.setOnClickListener(new View.OnClickListener() {
+        if (lock==0){
+            cpager.setVisibility(View.GONE);
+            mPager.setVisibility(View.VISIBLE);
+            viewPageradapter=new ViewPageradapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+            viewPageradapter.addfragment(new F_1());
+            viewPageradapter.addfragment(new F_2());
+            viewPageradapter.addfragment(new F_3());
+            mPager.setAdapter(viewPageradapter);
+            wormDotsIndicator.setViewPager(mPager);
+        }else {
+            mPager.setVisibility(View.GONE);
+            cpager.setVisibility(View.VISIBLE);
+            ViewPageradapter  viewPageradapter1=new ViewPageradapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+            viewPageradapter1.addfragment(new G_1());
+            viewPageradapter1.addfragment(new G_2());
+            viewPageradapter1.addfragment(new G_3());
+            cpager.setAdapter(viewPageradapter1);
+            wormDotsIndicator.setViewPager(cpager);
+        }
+
+}
+private void Handle_Clicks(){
+        finger_mode.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager=getFragmentManager();
-                Dialog_F_2 dialog_f_2=new Dialog_F_2();
-                dialog_f_2.show(fragmentManager,"");
-                dismiss();
+            public void onClick(View v) {
+                Handle_pager(0);
             }
         });
-        ////
         gp_mode.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager=getFragmentManager();
-                Dialog_G_1 dialog_g_1=new Dialog_G_1();
-                dialog_g_1.show(fragmentManager,"");
-                dismiss();
+            public void onClick(View v) {
+                Handle_pager(1);
             }
         });
 
+
+}
+
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Handle_pager(0);
     }
-
-
 }
