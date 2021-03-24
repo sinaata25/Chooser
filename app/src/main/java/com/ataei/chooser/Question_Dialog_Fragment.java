@@ -1,7 +1,9 @@
 package com.ataei.chooser;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -59,11 +61,16 @@ public class Question_Dialog_Fragment extends DialogFragment {
        finger_mode=view.findViewById(R.id.finger_mode);
         gp_mode=view.findViewById(R.id.gp_mode);
     }
+@SuppressLint("Range")
 private void Handle_pager(int lock){
 
         if (lock==0){
             cpager.setVisibility(View.GONE);
             mPager.setVisibility(View.VISIBLE);
+            finger_mode.setTextColor(Color.parseColor("#A8A8EA"));
+            gp_mode.setTextColor(Color.parseColor("#FF7676A5"));
+            finger_mode.setTextSize(22);
+            gp_mode.setTextSize(18);
             viewPageradapter=new ViewPageradapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
             viewPageradapter.addfragment(new F_1());
             viewPageradapter.addfragment(new F_2());
@@ -73,6 +80,10 @@ private void Handle_pager(int lock){
         }else {
             mPager.setVisibility(View.GONE);
             cpager.setVisibility(View.VISIBLE);
+            gp_mode.setTextColor(Color.parseColor("#A8A8EA"));
+            finger_mode.setTextColor(Color.parseColor("#FF7676A5"));
+            finger_mode.setTextSize(18);
+            gp_mode.setTextSize(22);
             ViewPageradapter  viewPageradapter1=new ViewPageradapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
             viewPageradapter1.addfragment(new G_1());
             viewPageradapter1.addfragment(new G_2());
