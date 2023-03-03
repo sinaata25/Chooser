@@ -1,5 +1,5 @@
 # Chooser
-If you want to choose between several people, one person or several people,or you want to choose a group of peaple to play a game or ... chooser can  help u :)
+If you want to choose between several people, one person or several people,or you want to choose a group of people to play a game or ... chooser can  help u :)
 
 
 
